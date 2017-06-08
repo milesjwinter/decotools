@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome to the decotools documentation!\n\n\nThis documentation page is still under construction\n.\n\n\nDecotools is a python package for analyzing \nDECO data\n.\n\n\nDECO is a citizen science project that enables users around the world to detect cosmic rays and other energetic particles with their cell phones and tablets. The recorded events are automatically uploaded to a central database. In addition to detecting particle events, users can analyze the data produced by their own or other users\u2019 phones.\n\n\nUseful links\n\n\n\n\nDECO homepage\n\n\nGitHub repository",
+            "text": "Welcome to the decotools documentation!\n\n\nThis documentation page is still under construction\n.\n\n\nDecotools is a python package for analyzing \nDECO data\n.\n\n\nDECO is a citizen science project that enables users around the world to detect cosmic rays and other energetic particles with their cell phones and tablets. The recorded events are automatically uploaded to a central database. In addition to detecting particle events, users can analyze the data produced by their own or other users\u2019 phones.\n\n\nUseful links\n\n\n\n\nDECO homepage\n\n\nGitHub repository\n\n\nContributing guide\n\n\n\n\nInstallation\n\n\nThe \ndecotools\n Python package can be installed directly from GitHub via\n\n\n$ pip install git+https://github.com/mattmeehan/decotools#egg=decotools\n\n\n\n\nFor more information on how \npip\n interacts with version control systems (like GitHub) see \nthis section of the pip documentation\n.\n\n\nNote for contributers:\n\n\nThere are extra dependencies for developers (e.g. \npytest\n for running test, \nmkdocs\n for building the documentation, etc.). These can be installed via\n\n\n$ pip install -r requirements-dev.txt",
             "title": "Home"
         },
         {
@@ -12,17 +12,22 @@
         },
         {
             "location": "/#useful-links",
-            "text": "DECO homepage  GitHub repository",
+            "text": "DECO homepage  GitHub repository  Contributing guide",
             "title": "Useful links"
         },
         {
+            "location": "/#installation",
+            "text": "The  decotools  Python package can be installed directly from GitHub via  $ pip install git+https://github.com/mattmeehan/decotools#egg=decotools  For more information on how  pip  interacts with version control systems (like GitHub) see  this section of the pip documentation .  Note for contributers:  There are extra dependencies for developers (e.g.  pytest  for running test,  mkdocs  for building the documentation, etc.). These can be installed via  $ pip install -r requirements-dev.txt",
+            "title": "Installation"
+        },
+        {
             "location": "/fileio/",
-            "text": "File I/O\n\n\ndef\n \nget_iOS_files\n(\nstart_date\n=\nNone\n,\n \nend_date\n=\nNone\n,\n \ndata_dir\n=\n'/net/deco/iOSdata'\n,\n\n                  \ninclude_events\n=\nTrue\n,\n \ninclude_min_bias\n=\nFalse\n,\n\n                  \nphone_model\n=\nNone\n,\n \nverbose\n=\n0\n)\n\n\n\n\n\n\nFunction to retrieve deco iOS image files\n\n\nParameters\n\n\n\n\n\n\nstart_date\n : str, optional\n\n\nStarting date for the iOS files to retrieve. Use any common\ndate format (e.g. '2017-01-01', '20170101', 'Jan 1, 2017', etc).\nDefault starting date is '2016.01.01'.\n\n\n\n\n\n\nend_date\n : str, optional\n\n\nEnding date for the iOS files to retrieve. Use any common\ndate format (e.g. '2017-01-01', '20170101', 'Jan 1, 2017', etc).\nDefault is the current date.\n\n\n\n\n\n\ndata_dir\n : str, optional\n\n\nBase directory to search for iOS image files.\n\n\n\n\n\n\ninclude_events\n : bool, optional\n\n\nOption to include images files flagged as events. Default is True.\n\n\n\n\n\n\ninclude_min_bias\n : bool, optional\n\n\nOption to include minimum bias image files. Default is False.\n\n\n\n\n\n\nphone_model\n : str or list, optional\n\n\nOption to specify which phone models you would like to look at.\nCan be either a string, e.g. 'iPhone 7', or a list of models,\ne.g. ['iPhone 5', 'iPhone 5s']. Default is to include all\nphone models.\n\n\n\n\n\n\nverbose\n : int (0 or 1)\n\n\nOption to have verbose output when getting files. Where 0 is\nleast verbose, while 1 is the most verbose.\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\nnumpy.ndarray\n\n\nNumpy array containing files that match specified criteria",
+            "text": "File I/O\n\n\ndef get_iOS_files(start_date=None, end_date=None, data_dir='/net/deco/iOSdata',\n                  include_events=True, include_min_bias=False,\n                  phone_model=None, verbose=0)\n\n\n\n\nFunction to retrieve deco iOS image files\n\n\nParameters\n\n\n\n\n\n\nstart_date\n : str, optional\n\n\nStarting date for the iOS files to retrieve. Use any common\ndate format (e.g. '2017-01-01', '20170101', 'Jan 1, 2017', etc).\nDefault starting date is '2016.01.01'.\n\n\n\n\n\n\nend_date\n : str, optional\n\n\nEnding date for the iOS files to retrieve. Use any common\ndate format (e.g. '2017-01-01', '20170101', 'Jan 1, 2017', etc).\nDefault is the current date.\n\n\n\n\n\n\ndata_dir\n : str, optional\n\n\nBase directory to search for iOS image files.\n\n\n\n\n\n\ninclude_events\n : bool, optional\n\n\nOption to include images files flagged as events. Default is True.\n\n\n\n\n\n\ninclude_min_bias\n : bool, optional\n\n\nOption to include minimum bias image files. Default is False.\n\n\n\n\n\n\nphone_model\n : str or list, optional\n\n\nOption to specify which phone models you would like to look at.\nCan be either a string, e.g. 'iPhone 7', or a list of models,\ne.g. ['iPhone 5', 'iPhone 5s']. Default is to include all\nphone models.\n\n\n\n\n\n\nverbose\n : int (0 or 1)\n\n\nOption to have verbose output when getting files. Where 0 is\nleast verbose, while 1 is the most verbose.\n\n\n\n\n\n\nReturns\n\n\n\n\n\n\nnumpy.ndarray\n\n\nNumpy array containing files that match specified criteria",
             "title": "File I/O"
         },
         {
             "location": "/fileio/#file-io",
-            "text": "def   get_iOS_files ( start_date = None ,   end_date = None ,   data_dir = '/net/deco/iOSdata' , \n                   include_events = True ,   include_min_bias = False , \n                   phone_model = None ,   verbose = 0 )   Function to retrieve deco iOS image files  Parameters    start_date  : str, optional  Starting date for the iOS files to retrieve. Use any common\ndate format (e.g. '2017-01-01', '20170101', 'Jan 1, 2017', etc).\nDefault starting date is '2016.01.01'.    end_date  : str, optional  Ending date for the iOS files to retrieve. Use any common\ndate format (e.g. '2017-01-01', '20170101', 'Jan 1, 2017', etc).\nDefault is the current date.    data_dir  : str, optional  Base directory to search for iOS image files.    include_events  : bool, optional  Option to include images files flagged as events. Default is True.    include_min_bias  : bool, optional  Option to include minimum bias image files. Default is False.    phone_model  : str or list, optional  Option to specify which phone models you would like to look at.\nCan be either a string, e.g. 'iPhone 7', or a list of models,\ne.g. ['iPhone 5', 'iPhone 5s']. Default is to include all\nphone models.    verbose  : int (0 or 1)  Option to have verbose output when getting files. Where 0 is\nleast verbose, while 1 is the most verbose.    Returns    numpy.ndarray  Numpy array containing files that match specified criteria",
+            "text": "def get_iOS_files(start_date=None, end_date=None, data_dir='/net/deco/iOSdata',\n                  include_events=True, include_min_bias=False,\n                  phone_model=None, verbose=0)  Function to retrieve deco iOS image files  Parameters    start_date  : str, optional  Starting date for the iOS files to retrieve. Use any common\ndate format (e.g. '2017-01-01', '20170101', 'Jan 1, 2017', etc).\nDefault starting date is '2016.01.01'.    end_date  : str, optional  Ending date for the iOS files to retrieve. Use any common\ndate format (e.g. '2017-01-01', '20170101', 'Jan 1, 2017', etc).\nDefault is the current date.    data_dir  : str, optional  Base directory to search for iOS image files.    include_events  : bool, optional  Option to include images files flagged as events. Default is True.    include_min_bias  : bool, optional  Option to include minimum bias image files. Default is False.    phone_model  : str or list, optional  Option to specify which phone models you would like to look at.\nCan be either a string, e.g. 'iPhone 7', or a list of models,\ne.g. ['iPhone 5', 'iPhone 5s']. Default is to include all\nphone models.    verbose  : int (0 or 1)  Option to have verbose output when getting files. Where 0 is\nleast verbose, while 1 is the most verbose.    Returns    numpy.ndarray  Numpy array containing files that match specified criteria",
             "title": "File I/O"
         },
         {
@@ -34,6 +39,66 @@
             "location": "/blobdetection/#blob-detection",
             "text": "Under construction...",
             "title": "Blob detection"
+        },
+        {
+            "location": "/contributing/",
+            "text": "Contributing\n\n\nDecotools is an open source project and contributions are always welcome!\n\n\nIf you are new to working with forks, check out \nGitHub's working with forks article\n.\n\n\nStep 1: Creating a new issue\n\n\n\n\nIf you don't already have a \nGitHub\n account, create one\n\n\nGo to the \nDecotools GitHub page\n and create a new issue by clicking on the \"Issues\" tab and then the \"New issue\" button\n\n\n\n\n\n\n\n\nStep 2: Forking the repository\n\n\n(If you have an existing configured fork of Decotools, you can skip to Step 4: Syncing an existing fork)\n\n\n\n\nFrom the Decotools repository use the \"Fork\" button to fork the project into your GitHub account\n\n\n\n\n\n\n\n\nThis forked copy of Decotools can now be cloned to your local machine using\n\n\n\n\n$ git clone https://github.com/<your_username>/decotools.git\n\n\n\n\nStep 3: Configuring a remote for a fork\n\n\nFrom your cloned copy of Decotools from the previous step, list the existing remotes with\n\n\n$ git remote -v\n\n\n\n\nYou'll most likely see something like\n\n\norigin  https://github.com/<your_username>/decotools.git (fetch)\norigin  https://github.com/<your_username>/decotools.git (push)\n\n\n\n\nTo add the original Decotools project repository as a remote (named \"upstream\") to your copy of Decotools via\n\n\n$ git remote add upstream https://github.com/mattmeehan/decotools.git`\n\n\n\n\nNow when you execute \ngit remote -v\n, the newly added upstream remote should be present\n\n\norigin  https://github.com/<your_username>/decotools.git (fetch)\norigin  https://github.com/<your_username>/decotools.git (push)\nupstream        https://github.com/mattmeehan/decotools.git (fetch)\nupstream        https://github.com/mattmeehan/decotools.git (push)\n\n\n\n\nStep 4: Syncing an existing fork\n\n\nTo ensure that your existing fork is up-to-date with the original Decotools repository, fetch the upstream commits via\n\n\n$ git fetch upstream\n\n\n\n\nThe output should look something like\n\n\nremote: Counting objects: xx, done.\nremote: Compressing objects: 100% (xx/xx), done.\nremote: Total xx (delta xx), reused xx (delta x)\nUnpacking objects: 100% (xx/xx), done.\nFrom https://github.com/mattmeehan/decotools\n * [new branch]      master     -> upstream/master\n\n\n\n\nNow the commits to the master branch of mattmeehan/decotools are stored in your local upstream/master branch. At this point, you'll want to make sure (if you're not already) that you're on the master branch of your local repository\n\n\n$ git checkout master\nSwitched to branch 'master'\n\n\n\n\nNow you can merge the upstream/master branch into your master branch with\n\n\n$ git merge upstream/master\n\n\n\n\nNow the master branch of your local copy of Decotools should be up-to-date with the original Decotools master branch!\n\n\nStep 5: Create a new feature branch\n\n\nNext, create a new branch for the feature you would like to develop with\n\n\n$ git checkout -b <new_feature_branch_name>\n\n\n\n\nThe output should be\n\n\nSwitched to branch '<new_feature_branch_name>'\n\n\n\n\nStep 5: Develop new code!\n\n\nNow add your feature, bug fix, typo fix, etc.\n\n\nStep 6: Running tests with the new code\n\n\nOnce your contribution has been added, you'll want to run the tests for this project to ensure that none of the code you added broke any tests. If you haven't already, make sure you have the necessary software installed for running the tests (\npytest\n) via\n\n\npip install -r requirements-dev.txt\n\n\n\n\nNow the tests can be run by going to the root directory of your decotools repository and executing\n\n\nmake tests\n\n\n\n\nStep 7: Documentation\n\n\nIf necessary for your contribution, add the appropriate documentation to the files in the \ndocs/docs\n directory  \n\n\nStep 8: Committing and uploading changes\n\n\nNow the changes you've made are ready to be committed and uploaded to GitHub. Let git know which files you would like to include in your commit via\n\n\n$ git add <modifies_files_here>\n\n\n\n\nand then commit your changes with\n\n\n$ git commit -m '<meaningful messages about the changes made>'\n\n\n\n\nNow you can push this commit from your local repository to your copy on GitHub\n\n\n$ git push origin <new_feature_branch_name>\n\n\n\n\nStep 10: Submitting a pull request\n\n\nFinally, you can go to your copy of Decotools on GitHub and submit a pull request by clicking the \"Compare & pull request\" button!",
+            "title": "Contributing"
+        },
+        {
+            "location": "/contributing/#contributing",
+            "text": "Decotools is an open source project and contributions are always welcome!  If you are new to working with forks, check out  GitHub's working with forks article .",
+            "title": "Contributing"
+        },
+        {
+            "location": "/contributing/#step-1-creating-a-new-issue",
+            "text": "If you don't already have a  GitHub  account, create one  Go to the  Decotools GitHub page  and create a new issue by clicking on the \"Issues\" tab and then the \"New issue\" button",
+            "title": "Step 1: Creating a new issue"
+        },
+        {
+            "location": "/contributing/#step-2-forking-the-repository",
+            "text": "(If you have an existing configured fork of Decotools, you can skip to Step 4: Syncing an existing fork)   From the Decotools repository use the \"Fork\" button to fork the project into your GitHub account     This forked copy of Decotools can now be cloned to your local machine using   $ git clone https://github.com/<your_username>/decotools.git",
+            "title": "Step 2: Forking the repository"
+        },
+        {
+            "location": "/contributing/#step-3-configuring-a-remote-for-a-fork",
+            "text": "From your cloned copy of Decotools from the previous step, list the existing remotes with  $ git remote -v  You'll most likely see something like  origin  https://github.com/<your_username>/decotools.git (fetch)\norigin  https://github.com/<your_username>/decotools.git (push)  To add the original Decotools project repository as a remote (named \"upstream\") to your copy of Decotools via  $ git remote add upstream https://github.com/mattmeehan/decotools.git`  Now when you execute  git remote -v , the newly added upstream remote should be present  origin  https://github.com/<your_username>/decotools.git (fetch)\norigin  https://github.com/<your_username>/decotools.git (push)\nupstream        https://github.com/mattmeehan/decotools.git (fetch)\nupstream        https://github.com/mattmeehan/decotools.git (push)",
+            "title": "Step 3: Configuring a remote for a fork"
+        },
+        {
+            "location": "/contributing/#step-4-syncing-an-existing-fork",
+            "text": "To ensure that your existing fork is up-to-date with the original Decotools repository, fetch the upstream commits via  $ git fetch upstream  The output should look something like  remote: Counting objects: xx, done.\nremote: Compressing objects: 100% (xx/xx), done.\nremote: Total xx (delta xx), reused xx (delta x)\nUnpacking objects: 100% (xx/xx), done.\nFrom https://github.com/mattmeehan/decotools\n * [new branch]      master     -> upstream/master  Now the commits to the master branch of mattmeehan/decotools are stored in your local upstream/master branch. At this point, you'll want to make sure (if you're not already) that you're on the master branch of your local repository  $ git checkout master\nSwitched to branch 'master'  Now you can merge the upstream/master branch into your master branch with  $ git merge upstream/master  Now the master branch of your local copy of Decotools should be up-to-date with the original Decotools master branch!",
+            "title": "Step 4: Syncing an existing fork"
+        },
+        {
+            "location": "/contributing/#step-5-create-a-new-feature-branch",
+            "text": "Next, create a new branch for the feature you would like to develop with  $ git checkout -b <new_feature_branch_name>  The output should be  Switched to branch '<new_feature_branch_name>'",
+            "title": "Step 5: Create a new feature branch"
+        },
+        {
+            "location": "/contributing/#step-5-develop-new-code",
+            "text": "Now add your feature, bug fix, typo fix, etc.",
+            "title": "Step 5: Develop new code!"
+        },
+        {
+            "location": "/contributing/#step-6-running-tests-with-the-new-code",
+            "text": "Once your contribution has been added, you'll want to run the tests for this project to ensure that none of the code you added broke any tests. If you haven't already, make sure you have the necessary software installed for running the tests ( pytest ) via  pip install -r requirements-dev.txt  Now the tests can be run by going to the root directory of your decotools repository and executing  make tests",
+            "title": "Step 6: Running tests with the new code"
+        },
+        {
+            "location": "/contributing/#step-7-documentation",
+            "text": "If necessary for your contribution, add the appropriate documentation to the files in the  docs/docs  directory",
+            "title": "Step 7: Documentation"
+        },
+        {
+            "location": "/contributing/#step-8-committing-and-uploading-changes",
+            "text": "Now the changes you've made are ready to be committed and uploaded to GitHub. Let git know which files you would like to include in your commit via  $ git add <modifies_files_here>  and then commit your changes with  $ git commit -m '<meaningful messages about the changes made>'  Now you can push this commit from your local repository to your copy on GitHub  $ git push origin <new_feature_branch_name>",
+            "title": "Step 8: Committing and uploading changes"
+        },
+        {
+            "location": "/contributing/#step-10-submitting-a-pull-request",
+            "text": "Finally, you can go to your copy of Decotools on GitHub and submit a pull request by clicking the \"Compare & pull request\" button!",
+            "title": "Step 10: Submitting a pull request"
         }
     ]
 }
