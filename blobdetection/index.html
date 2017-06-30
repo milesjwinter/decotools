@@ -145,7 +145,55 @@
         <div class="col-md-9" role="main">
 
 <h1 id="blob-detection">Blob detection</h1>
-<p>Under construction...</p></div>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">extract_blobs</span><span class="p">(</span><span class="n">image_file</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">20.</span><span class="p">,</span> <span class="n">min_area</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">max_area</span><span class="o">=</span><span class="mf">200.</span><span class="p">,</span>
+                  <span class="n">max_dist</span><span class="o">=</span><span class="mf">150.</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+</pre></div>
+
+
+<p>Function to perform blob detection on an input image.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<p><code>image_file</code> : str</p>
+<p>Path to image file.</p>
+</li>
+<li>
+<p><code>threshold</code> : float, optional</p>
+<p>Threshold for blob detection. Only pixels with an intensity above
+this threshold will be used in blob detection (default: 20).</p>
+</li>
+<li>
+<p><code>min_area</code> : float, optional</p>
+<p>Minimum area for a blob to be kept. This helps get rid of noise in
+an image (default: 10).</p>
+</li>
+<li>
+<p><code>max_area</code> : float, optional</p>
+<p>Maximum area for a blob to be kept. This helps get rid of pathological
+events in an image (default: 200).</p>
+</li>
+<li>
+<p><code>max_dist</code> : float, optional</p>
+<p>Distance scale for grouping close by blobs. If two blobs are separated
+by less than max_dist, they are grouped together as a single blob
+(defualt: 150).</p>
+</li>
+<li>
+<p><code>square</code> : bool, optional</p>
+<p>Whether or not the returned zoomed image on the blob is square or
+not (defualt: True).</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li>
+<p><code>pandas.DataFrame</code></p>
+<p>A DataFrame containing information about the found blobs is returned.
+Each row in the DataFrame corresponds to a blob group, while each
+column corresponds to a pertinent quanitity (area, eccentricity,
+zoomed image array, etc.).</p>
+</li>
+</ul></div>
         
     </div>
 

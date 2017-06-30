@@ -145,9 +145,10 @@
         <div class="col-md-9" role="main">
 
 <h1 id="file-io">File I/O</h1>
-<pre class="codehilite"><code class="language-python">def get_iOS_files(start_date=None, end_date=None, data_dir='/net/deco/iOSdata',
-                  include_events=True, include_min_bias=False,
-                  phone_model=None, verbose=0)</code></pre>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_iOS_files</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data_dir</span><span class="o">=</span><span class="s1">&#39;/net/deco/iOSdata&#39;</span><span class="p">,</span>
+                  <span class="n">include_events</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">include_min_bias</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+                  <span class="n">phone_model</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
 
 
 <p>Function to retrieve deco iOS image files</p>
@@ -193,7 +194,7 @@ least verbose, while 1 is the most verbose.</p>
 <p><strong>Returns</strong></p>
 <ul>
 <li>
-<p>numpy.ndarray</p>
+<p><code>numpy.ndarray</code></p>
 <p>Numpy array containing files that match specified criteria</p>
 </li>
 </ul></div>

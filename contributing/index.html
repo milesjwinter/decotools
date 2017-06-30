@@ -193,87 +193,103 @@
 <ul>
 <li>This forked copy of Decotools can now be cloned to your local machine using</li>
 </ul>
-<pre class="codehilite"><code class="language-bash">$ git clone https://github.com/&lt;your_username&gt;/decotools.git</code></pre>
+<div class="codehilite"><pre><span></span>$ git clone https://github.com/&lt;your_username&gt;/decotools.git
+</pre></div>
 
 
 <h2 id="step-3-configuring-a-remote-for-a-fork">Step 3: Configuring a remote for a fork</h2>
 <p>From your cloned copy of Decotools from the previous step, list the existing remotes with</p>
-<pre class="codehilite"><code class="language-bash">$ git remote -v</code></pre>
+<div class="codehilite"><pre><span></span>$ git remote -v
+</pre></div>
 
 
 <p>You'll most likely see something like</p>
-<pre class="codehilite"><code class="language-bash">origin  https://github.com/&lt;your_username&gt;/decotools.git (fetch)
-origin  https://github.com/&lt;your_username&gt;/decotools.git (push)</code></pre>
+<div class="codehilite"><pre><span></span>origin  https://github.com/&lt;your_username&gt;/decotools.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/&lt;your_username&gt;/decotools.git <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
 
 
 <p>To add the original Decotools project repository as a remote (named "upstream") to your copy of Decotools via</p>
-<pre class="codehilite"><code class="language-bash">$ git remote add upstream https://github.com/mattmeehan/decotools.git`</code></pre>
+<div class="codehilite"><pre><span></span>$ git remote add upstream https://github.com/mattmeehan/decotools.git<span class="sb">`</span>
+</pre></div>
 
 
 <p>Now when you execute <code>git remote -v</code>, the newly added upstream remote should be present</p>
-<pre class="codehilite"><code class="language-bash">origin  https://github.com/&lt;your_username&gt;/decotools.git (fetch)
-origin  https://github.com/&lt;your_username&gt;/decotools.git (push)
-upstream        https://github.com/mattmeehan/decotools.git (fetch)
-upstream        https://github.com/mattmeehan/decotools.git (push)</code></pre>
+<div class="codehilite"><pre><span></span>origin  https://github.com/&lt;your_username&gt;/decotools.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/&lt;your_username&gt;/decotools.git <span class="o">(</span>push<span class="o">)</span>
+upstream        https://github.com/mattmeehan/decotools.git <span class="o">(</span>fetch<span class="o">)</span>
+upstream        https://github.com/mattmeehan/decotools.git <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
 
 
 <h2 id="step-4-syncing-an-existing-fork">Step 4: Syncing an existing fork</h2>
 <p>To ensure that your existing fork is up-to-date with the original Decotools repository, fetch the upstream commits via</p>
-<pre class="codehilite"><code class="language-bash">$ git fetch upstream</code></pre>
+<div class="codehilite"><pre><span></span>$ git fetch upstream
+</pre></div>
 
 
 <p>The output should look something like</p>
-<pre class="codehilite"><code>remote: Counting objects: xx, done.
-remote: Compressing objects: 100% (xx/xx), done.
-remote: Total xx (delta xx), reused xx (delta x)
-Unpacking objects: 100% (xx/xx), done.
-From https://github.com/mattmeehan/decotools
- * [new branch]      master     -&gt; upstream/master</code></pre>
+<div class="codehilite"><pre><span></span><span class="nl">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="nl">objects</span><span class="p">:</span> <span class="n">xx</span><span class="p">,</span> <span class="n">done</span><span class="p">.</span>
+<span class="nl">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="n">xx</span><span class="o">/</span><span class="n">xx</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
+<span class="nl">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="n">xx</span> <span class="p">(</span><span class="n">delta</span> <span class="n">xx</span><span class="p">),</span> <span class="n">reused</span> <span class="n">xx</span> <span class="p">(</span><span class="n">delta</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">Unpacking</span> <span class="nl">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="n">xx</span><span class="o">/</span><span class="n">xx</span><span class="p">),</span> <span class="n">done</span><span class="p">.</span>
+<span class="n">From</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/mattmeehan/decotools</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">master</span>     <span class="o">-&gt;</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span>
+</pre></div>
 
 
 <p>Now the commits to the master branch of mattmeehan/decotools are stored in your local upstream/master branch. At this point, you'll want to make sure (if you're not already) that you're on the master branch of your local repository</p>
-<pre class="codehilite"><code class="language-bash">$ git checkout master
-Switched to branch 'master'</code></pre>
+<div class="codehilite"><pre><span></span>$ git checkout master
+Switched to branch <span class="s1">&#39;master&#39;</span>
+</pre></div>
 
 
 <p>Now you can merge the upstream/master branch into your master branch with</p>
-<pre class="codehilite"><code class="language-bash">$ git merge upstream/master</code></pre>
+<div class="codehilite"><pre><span></span>$ git merge upstream/master
+</pre></div>
 
 
 <p>Now the master branch of your local copy of Decotools should be up-to-date with the original Decotools master branch!</p>
 <h2 id="step-5-create-a-new-feature-branch">Step 5: Create a new feature branch</h2>
 <p>Next, create a new branch for the feature you would like to develop with</p>
-<pre class="codehilite"><code class="language-bash">$ git checkout -b &lt;new_feature_branch_name&gt;</code></pre>
+<div class="codehilite"><pre><span></span>$ git checkout -b &lt;new_feature_branch_name&gt;
+</pre></div>
 
 
 <p>The output should be</p>
-<pre class="codehilite"><code class="language-bash">Switched to branch '&lt;new_feature_branch_name&gt;'</code></pre>
+<div class="codehilite"><pre><span></span>Switched to branch <span class="s1">&#39;&lt;new_feature_branch_name&gt;&#39;</span>
+</pre></div>
 
 
 <h2 id="step-5-develop-new-code">Step 5: Develop new code!</h2>
 <p>Now add your feature, bug fix, typo fix, etc.</p>
 <h2 id="step-6-running-tests-with-the-new-code">Step 6: Running tests with the new code</h2>
 <p>Once your contribution has been added, you'll want to run the tests for this project to ensure that none of the code you added broke any tests. If you haven't already, make sure you have the necessary software installed for running the tests (<code>pytest</code>) via</p>
-<pre class="codehilite"><code class="language-bash">pip install -r requirements-dev.txt</code></pre>
+<div class="codehilite"><pre><span></span>pip install -r requirements-dev.txt
+</pre></div>
 
 
 <p>Now the tests can be run by going to the root directory of your decotools repository and executing</p>
-<pre class="codehilite"><code class="language-bash">make tests</code></pre>
+<div class="codehilite"><pre><span></span>make tests
+</pre></div>
 
 
 <h2 id="step-7-documentation">Step 7: Documentation</h2>
 <p>If necessary for your contribution, add the appropriate documentation to the files in the <code>docs/docs</code> directory  </p>
 <h2 id="step-8-committing-and-uploading-changes">Step 8: Committing and uploading changes</h2>
 <p>Now the changes you've made are ready to be committed and uploaded to GitHub. Let git know which files you would like to include in your commit via</p>
-<pre class="codehilite"><code class="language-bash">$ git add &lt;modifies_files_here&gt;</code></pre>
+<div class="codehilite"><pre><span></span>$ git add &lt;modifies_files_here&gt;
+</pre></div>
 
 
 <p>and then commit your changes with</p>
-<pre class="codehilite"><code class="language-bash">$ git commit -m '&lt;meaningful messages about the changes made&gt;'</code></pre>
+<div class="codehilite"><pre><span></span>$ git commit -m <span class="s1">&#39;&lt;meaningful messages about the changes made&gt;&#39;</span>
+</pre></div>
 
 
 <p>Now you can push this commit from your local repository to your copy on GitHub</p>
-<pre class="codehilite"><code class="language-bash">$ git push origin &lt;new_feature_branch_name&gt;</code></pre>
+<div class="codehilite"><pre><span></span>$ git push origin &lt;new_feature_branch_name&gt;
+</pre></div>
 
 
 <h2 id="step-10-submitting-a-pull-request">Step 10: Submitting a pull request</h2>
